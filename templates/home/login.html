@@ -3,7 +3,7 @@
 <div class="login-container">
   <form class="border border-subtle p-3 m-5 card login-box">
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <label for="exampleInputEmail1" class="form-label">Admin Email</label>
       <input
         type="email"
         class="form-control"
@@ -18,8 +18,20 @@
       <label for="exampleInputPassword1" class="form-label">Password</label>
       <input type="password" class="form-control" id="exampleInputPassword1" />
     </div>
-    <button type="submit" class="btn btn-success mb-2">Submit</button>
-    <button type="submit" class="btn btn-primary"><a>Register</a></button>
+    <div class="d-flex justify-content-center">
+      <span>
+        <a href="#">
+          <button type="submit" class="btn btn-outline-success m-1">
+            Login As Warden
+          </button>
+        </a>
+        <a href="#">
+          <button class="btn btn-outline-primary m-1" type="submit">
+            Login As Student
+          </button>
+        </a>
+      </span>
+    </div>
   </form>
 </div>
 

@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -7,5 +6,5 @@ from django.contrib.auth.models import User
 def home(request):
     return render(request, 'home/homepage.html')
 
-def login_warden(request):
-    return render(request, 'home/login_warden.html')
+def login(request):
+    return render(request, 'home/login.html')
