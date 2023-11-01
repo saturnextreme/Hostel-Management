@@ -1,3 +1,4 @@
+# https://github.com/saturnextreme/Hostel-Management
 from django.db import models
 
 class Hostel(models.Model):
@@ -52,10 +53,12 @@ class EntryExitForm(models.Model):
 class Complaint(models.Model):
     roll_no = models.ForeignKey('Student', on_delete=models.CASCADE)
     complaint = models.TextField()
+    complaint_by = models.TextField()
+    complaint_datetime = models.DateTimeField()
     is_addressed = models.BooleanField(default=False)
 
 class Admin(models.Model):
     username = models.CharField(primary_key=True, max_length=50)
     password = models.CharField(max_length=100)
     notification = models.TextField()
-
+    notification_datetime = models.DateTimeField()
