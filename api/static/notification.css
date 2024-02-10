@@ -1,0 +1,43 @@
+  
+.noticebox {
+    width: 95%;
+    height: 100%;
+    padding: 2%;
+    font-size: 1em;
+    border: none;
+    margin: auto;
+    border-radius: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: #efe7dd url("https://cloud.githubusercontent.com/assets/398893/15136779/4e765036-1639-11e6-9201-67e728e86f39.jpg") repeat;
+}
+
+.message-notify {
+    width: 80%;
+    max-width: auto;
+    height: auto;
+    padding: 1em;
+    border-radius: 14px;
+    font-weight: 300;
+    color: black;
+    background: #e1ffc7;
+    border: none;
+    margin: 1em auto;
+    line-height: 1.5;
+}
+
+.time {
+    width: auto;
+    font-size: 0.75em;
+    font-weight: 100;
+    color: rgb(0, 0, 94);
+    background-color: inherit;
+    padding: 2px;
+    border: none;
+}
+
+@media only screen and (width < 600px) {
+    .noticebox {
+        font-size: 1.15em;
+    }
+}

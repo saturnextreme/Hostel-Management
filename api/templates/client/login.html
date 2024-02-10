@@ -1,0 +1,41 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'login.css' %}" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        Student Login
+      </div>
+      <form method="post" action="{% url 'login' %}" id="loginContainer" class="">
+        {% csrf_token %}
+        <div class="form">
+          <label for="email" class="inp-l">Email</label>
+          <input type="email" name="email" class="inp" />
+          <label for="password" class="inp-l">Password</label>
+          <input type="password" name="password" class="inp" />
+        </div>
+        {% if messages %} 
+        <ul class="messages">
+          {% for message in messages %}
+            <div class="notification {% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</div>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        <div class="btn">
+          <a href=""> 
+            <button class="button-9" role="button">Login</button>
+          </a>
+        </div>
+      </form>
+      <a class='signuppage' href="{% url 'signup' %}">Don't have an Account. Create one!</a>
+    </div>
+  </body>
+</html>

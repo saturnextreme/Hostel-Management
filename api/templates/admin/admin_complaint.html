@@ -1,0 +1,34 @@
+{% extends "admin/admin_dashboard.html" %} {% block content %}
+
+
+{% load static %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'leaveformstatus.css' %}" />
+<link rel="stylesheet" href="{% static 'basic.css' %}" />
+
+
+<div class="m_header">Complaints</div>
+<div class="content">
+  <div class="box">
+    <div class="status">
+      <div class="status_row first">
+        <div class="status_col" style="font-weight: bold">Name</div>
+        <div class="status_col" style="font-weight: bold">Roll No</div>
+        <div class="status_col" style="font-weight: bold">Room No</div>
+        <div class="status_col" style="font-weight: bold">Complaint</div>
+        <div class="status_col" style="font-weight: bold">Posted On</div>
+      </div>
+      {% for item in context %}
+      <div class="status_row second">
+        <div class="status_col">{{ item.fname }} {{ item.lname }}</div>
+        <div class="status_col">{{ item.rollno.rollno }}</div>
+        <div class="status_col">{{ item.roomno }}</div>
+        <div class="status_col">{{ item.comp }}</div>
+        <div class="status_col">{{ item.created_at }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

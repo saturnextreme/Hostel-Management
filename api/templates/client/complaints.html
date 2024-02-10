@@ -1,0 +1,28 @@
+{% extends "client/dashboard.html" %} {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'basic.css' %}" />
+<link rel="stylesheet" href="{% static 'complaints.css' %}" />
+
+<div class="m_header">Complaints</div>
+<div class="content">
+  <div class="box">
+    <div class="noticebox">
+      {% for entry in context %}
+      <div class="message-notify {{ entry.color }}">
+        {{ entry.complaint }}
+        <div class="time">{{ entry.created_at }}</div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="btn">
+      <form class="f1" method="post" action="{% url 'complaints' %}">
+        {% csrf_token %}
+        <div class="grd">
+          <input type="text" class="write" name="complaint" />
+          <button class="t-btn" type="submit">></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

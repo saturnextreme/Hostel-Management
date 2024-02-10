@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@600&display=swap");
+
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kumbh Sans", sans-serif;
+  scroll-behavior: smooth
+}
+
+.header {
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  background-image: url("img1.jpg");
+  background-size: cover;
+  border-bottom: 1px solid black;
+}
+
+.about {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  align-items: center;
+  padding: 150px 0 100px 0; 
+  background: radial-gradient(circle at 10% 20%, rgb(215, 223, 252) 0%, rgb(255, 255, 255) 0%, rgb(215, 223, 252) 84%);
+}
+
+.contact {
+  width: 100%;
+  height: auto;
+  background: black;
+  color: white;
+  border-top: 5px solid gray;
+  padding: 30px 0 30px 0;
+}
+
+.links-d {
+  display: flex;
+  justify-content: center;
+}
+
+.link {
+  margin: 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 1.1em;
+}
+.link:hover {
+  color: green;
+  text-decoration: underline;
+}
+
+.h {
+  width: 100%;
+  text-align: center;
+  font-size: 3.3em;
+  font-weight: 800;
+  z-index: -1;
+  margin-bottom: 6%;
+}
+
+.head {
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 800;
+  z-index: -1;
+  /* color: rgb(204, 153, 209); */
+}
+
+.heading {
+  text-align: center;
+  margin: 0px auto;
+  color: white;
+  font-weight: 500;
+  padding-top: 250px;
+  -webkit-text-stroke: 2px black;
+}
+
+.heading-text {
+  margin-bottom: 50px;
+  font-size: 4em;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: -1;
+}
+
+.btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.line {
+  width: 80%;
+  margin: 0 auto;
+  height: 2px;
+  border: none;
+  background-color: #2d3436;
+  background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  overflow: hidden;
+  position: sticky;
+  top: 0px;
+  margin: 0;
+  background-color: black;
+  z-index: 2;
+}
+
+.nav-link {
+  font-size: 1em;
+  text-decoration: none;
+  padding: 20px;
+  color: white;
+  margin: 0;
+  height: inherit;
+}
+
+.nav-link:hover {
+  border-bottom: 5px solid yellow;
+  color: yellow;
+  transition: 0.1s;
+}
+
+.login-btn {
+  width: 100%;
+  align-items: center;
+  height: 200px;
+}
+
+.button-33 {
+  background-color: #0300a1b6;
+  border-radius: 10px;
+  box-shadow: rgba(44, 187, 144, 0.2) 0 -25px 18px -14px inset,
+    rgba(44, 187, 99, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px,
+    rgba(44, 187, 99, 0.15) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px,
+    rgba(255, 255, 255, 0.15) 0 16px 32px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  display: inline-block;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 20px;
+  width: 150px;
+  height: 50px;
+}
+
+.button-33:hover {
+  box-shadow: rgba(44, 187, 180, 0.35) 0 -25px 18px -14px inset,
+    rgba(44, 170, 187, 0.25) 0 1px 2px, rgba(44, 177, 187, 0.25) 0 2px 4px,
+    rgba(44, 134, 187, 0.25) 0 4px 8px, rgba(44, 154, 187, 0.25) 0 8px 16px,
+    rgba(44, 165, 187, 0.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+
+
+.card2 {
+  width: 250px;
+  height: auto;
+  padding: 2em 0.5em;
+  background-color: white;
+  border: 2px solid rgb(22, 0, 150);
+  box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 3%);
+  position: relative;
+  margin: 20px;
+  text-align: center;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.card2 > * + * {
+  margin-top: 0.9em;
+}
+
+.card2 .card2__content {
+  font-size: 1.2em;
+  text-align: justify;
+  color: black;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.card2 .card2__title {
+  padding: 0;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: black;
+  text-decoration-line: underline;
+  text-decoration-color: black;
+}
+
+@media only screen and (width < 600px) {
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .h {
+    width: 100%;
+    text-align: center;
+  }
+}

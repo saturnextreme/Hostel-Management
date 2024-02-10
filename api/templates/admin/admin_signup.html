@@ -1,0 +1,43 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'login.css' %}" />
+    <title>Signup</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        Admin SignUp
+      </div>
+      <form method="post" action="{% url 'admin_signup' %}" id="registerContainer">
+        {% csrf_token %}
+        <div class="form">
+          <label for="username" class="inp-l">Username</label>
+          <input type="text" name="username" class="inp" />
+          <label for="password" class="inp-l">Password</label>
+          <input type="password" name="password" class="inp" />
+          <label for="c_password" class="inp-l">Confirm Password</label>
+          <input type="password" name="c_password" class="inp" />
+          <label for="passphrase" class="inp-l">Passphrase</label>
+          <input type="password" name="passphrase" class="inp" />
+        </div>
+        {% if messages %} 
+        <ul class="messages">
+          {% for message in messages %}
+            <div class="notification {% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</div>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        <div class="btn">
+          <button class="button-9" role="button" >Register</button>
+        </div>
+      </form>
+      <a class='signuppage' href="{% url 'admin_login' %}">Already have an Account.LogIn!</a>
+    </div>
+  </body>
+</html>

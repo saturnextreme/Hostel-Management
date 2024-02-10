@@ -1,0 +1,170 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.header {
+  background-color: rgb(25, 65, 153);
+  border-radius: 10px;
+  margin: 0 auto;
+  text-align: center;
+  border-bottom: 3px solid rgb(25, 65, 153);;
+  padding: 8px;
+  font-size: 1.6em;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  margin: 0;
+}
+
+.section:hover {
+  color: cyan;
+}
+.green {
+  color: lightgreen;
+  text-decoration: underline;
+}
+
+.container {
+  width: 600px;
+  height: 100%;
+  padding: 20px;
+  margin: 10% auto;
+  border-radius: 10px;
+  box-shadow: -3px 3px 30px -10px rgb(2, 55, 107);
+  background-color: white;
+  background-color:rgb(156, 199, 243);
+}
+
+form {
+  width: auto;
+  margin: 10% auto;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.inp-l {
+  margin: 10px 0;
+  font-size: 1.2em;
+  outline-style: none;
+  border-radius: 5px;
+  padding: 0.3em;
+}
+
+.inp {
+  margin: 10px 0;
+  height: 3em;
+  padding: 1em;
+  font-size: 0.9em;
+  outline-style: none;
+  width: 80%;
+  font-family: Verdana, sans-serif;
+  border-radius: 10px;
+  border: none;
+  border-bottom: 1px solid rgb(59 138 219);
+  background-color:rgba(230, 230, 230, 0.507);
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2em;
+  margin-bottom: -3em;
+}
+
+.button-9 {
+  appearance: button;
+  backface-visibility: hidden;
+  background-color: #405cf5;
+  border-radius: 6px;
+  border-width: 0;
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+    rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
+    Ubuntu, sans-serif;
+  font-size: 100%;
+  height: 37px;
+  line-height: 1.15;
+  margin: 12px 0 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transform: translateZ(0);
+  transition: all 0.2s, box-shadow 0.08s ease-in;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 150px;
+  margin: 20px;
+}
+
+.button-9:disabled {
+  cursor: default;
+}
+
+.button-9:focus {
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+    rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0,
+    rgba(50, 151, 211, 0.3) 0 0 0 4px;
+}
+
+.hidden {
+    display: none;
+}
+
+.notification {
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+}
+
+.signuppage {
+  color: blue;
+  text-decoration: underline;
+}
+
+.success {
+  color: rgb(16, 68, 0);
+  background-color: rgb(208, 248, 175);
+  border: 1px solid rgb(0, 105, 5);
+}
+
+.error {
+  color: red;
+  background-color: rgb(248, 175, 175);
+  border: 1px solid rgb(231, 68, 68);
+}
+
+@media only screen and (width < 600px) {
+    * {
+        font-size: 0.95em;
+    }
+  .container {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    border-radius: 0;
+  }
+  .inp {
+    width: 90%;
+  }
+}

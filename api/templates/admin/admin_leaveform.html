@@ -1,0 +1,93 @@
+{% extends "admin/admin_dashboard.html" %} {% block content %} {% load static %}
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="{% static 'leaveformstatus.css' %}" />
+<link rel="stylesheet" href="{% static 'basic.css' %}" />
+
+<div class="m_header">LeaveForm Status</div>
+<div class="content">
+  <div class="box">
+    <div class="status">
+      <div class="status_row first">
+        <div class="status_col" style="font-weight: bold">Roll No</div>
+        <div class="status_col" style="font-weight: bold">Reason</div>
+        <div class="status_col" style="font-weight: bold">Acceptance</div>
+        <div class="status_col" style="font-weight: bold">
+          Train Reservation
+        </div>
+        <div class="status_col" style="font-weight: bold">Generate</div>
+        <div class="status_col" style="font-weight: bold">Reject</div>
+      </div>
+      {% for item in context %}
+      <div class="status_row second">
+        <div class="status_col">{{ item.rollno }}</div>
+        <div class="status_col">{{ item.reason }}</div>
+        <div class="status_col" style='font-weight: bold;'>{{ item.acceptance }}</div>
+        <div class="status_col">
+          <a href="{{ item.reservation }}" target="_blank">
+            <button
+              style="
+                font-size: 0.6em;
+                background-color: green;
+                color: white;
+                font-weight: bold;
+                border-radius: 10px;
+                border: none;
+              "
+            >
+              Train Ticket Form
+            </button></a
+          >
+        </div>
+
+        <div class="status_col">
+          <form method='POST'> 
+            {% csrf_token %}
+            <input name="roll" value="{{item.rollno}}" type="hidden" readonly />
+            <input name="reason" value="{{item.reason}}" type="hidden" readonly />
+            <input name="accept" value="accept" type="hidden" readonly />
+            <a>
+              <button
+                style="
+                  font-size: 0.6em;
+                  background-color: green;
+                  color: white;
+                  font-weight: bold;
+                  border-radius: 10px;
+                  border: none;
+                "
+              >
+                Signatured Form
+              </button></a
+            >
+          </form>
+        </div>
+
+        <div class="status_col">
+          <form method='POST'> 
+            {% csrf_token %}
+            <input name="roll" value="{{item.rollno}}" type="hidden" readonly />
+            <input name="reason" value="{{ item.reason }}" type="hidden" readonly />
+            <input name="accept" value="reject" type="hidden" readonly />
+            <a>
+              <button
+                style="
+                  font-size: 0.6em;
+                  background-color: red;
+                  color: white;
+                  font-weight: bold;
+                  border-radius: 10px;
+                  border: none;
+                "
+              >
+                Reject
+              </button></a
+            >
+          </form>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

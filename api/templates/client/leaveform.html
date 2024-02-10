@@ -1,0 +1,55 @@
+{% extends "client/dashboard.html" %} {% block content %} {% load static %}
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="{% static 'basic.css' %}" />
+<link rel="stylesheet" href="{% static 'leaveform.css' %}" />
+
+<div class="m_header">LeaveForm</div>
+<div class="content">
+  <div class="box">
+    <form
+      method="post"
+      enctype="multipart/form-data"
+      action="{% url 'leaveform' %}"
+      class="basic"
+    >
+      {% csrf_token %} {{ form.as_p }}
+      <div class="leave">
+        <div class="row">
+          <input value="{{ rollno }}" readonly />
+          <input placeholder="Leave Date" name="leave_d" type="text" />
+          <input placeholder="Leave Time" name="leave_t" type="text" />
+        </div>
+        <div class="row">
+          <input value="{{ fname }} {{ lname }}" type="text" />
+          <input placeholder="Arrive Date" name="arrive_d" type="text" />
+          <input placeholder="Arrive Time" name="arrive_t" type="text" />
+        </div>
+      </div>
+      <div class='other'>
+        <input type="file" class='fileinput' name="reservation" accept=".pdf" />
+        <textarea
+          maxlength="100"
+          class="col"
+          placeholder="Reason for Leave"
+          name="reason"
+          cols="40"
+          rows="6"
+        ></textarea>
+        <button type="submit" class="buttn">Submit</button>
+      </div>
+    </form>
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <div
+        class="notification {% if message.tags %}{{ message.tags }}{% endif %}"
+      >
+        {{ message }}
+      </div>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

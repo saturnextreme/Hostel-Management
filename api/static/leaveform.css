@@ -1,0 +1,69 @@
+
+
+.box {
+    background: inherit;
+}
+
+.buttn {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 0 43%;
+  border: none;
+}
+
+.basic {
+    width: 80%;
+    margin: auto;
+    background-color: #FECA57;
+    border-bottom: orange;
+    border-radius: 10px;
+    padding: 1em;
+    opacity: 0.6;
+    z-index: 0;
+}
+.leave {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.row {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    margin: 0.5em;
+    width: 90%;
+    height: 30%;
+    background-color: rgb(252, 239, 229);
+    border: none;
+    border-bottom: 2px solid orange;
+    border-radius: 10px;
+}
+.fileinput {
+    width: 400px;
+    margin: 0 auto;
+}
+textarea {
+    margin: 1em auto;
+}
+.other {
+    display: flex;
+    flex-direction: column;
+}
+button {
+
+    width:fit-content
+}
+
+@media only screen and (width < 850px) {
+    .fileinput {
+        width: 100%;
+    }
+    .basic {
+        width: 90%;
+        height: 90%;
+    }
+}

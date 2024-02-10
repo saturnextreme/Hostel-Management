@@ -1,0 +1,88 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'home.css' %}" />
+    <title>Hostel Management</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="#head" class="nav-link">HOME</a>
+      <a href="#about" class="nav-link">INFO</a>
+      <a href="#contact" class="nav-link">CONTACT</a>
+    </div>
+    <div class="header" id="head">
+      <div class="heading">
+        <h3 class="heading-text">Hostel Management Website</h3>
+      </div>
+      <div class="btn">
+        <a href="{% url 'admin_login' %}">
+          <button class="button-33" role="button">Admin</button>
+        </a>
+        <a href="{% url 'login' %}">
+          <button class="button-33" role="button">Student</button>
+        </a>
+      </div>
+    </div>
+
+    <div class="about" id="about">
+      <div class="h">Features</div>
+      <div class="content">
+        <div class="card2">
+          <h3 class="card2__title">Admin Notifications</h3>
+          <p class="card2__content">
+            Stay updated effortlessly with our admin notifications. Whether it's
+            important announcements, upcoming events, or any changes in hostel
+            services, you'll receive instant updates directly through our
+            platform.
+          </p>
+        </div>
+        <div class="card2">
+          <h3 class="card2__title">Complaint System</h3>
+          <p class="card2__content">
+            We believe in prompt issue resolution. Our complaint feature allows
+            you to communicate directly with the admin regarding any
+            hostel-related concerns you might have. Your feedback matters, and
+            this system ensures that your voice is heard.
+          </p>
+        </div>
+        <div class="card2">
+          <h3 class="card2__title">Hostel Information Storage</h3>
+          <p class="card2__content">
+            Keep track of all your hostel-related information in one secure
+            place. From your room details to important contact numbers, you'll
+            have easy access whenever you need it.
+          </p>
+        </div>
+        <div class="card2">
+          <h3 class="card2__title">Effortless Entry and Exit Forms</h3>
+          <p class="card2__content">
+            Streamline your entry and exit processes with our digital forms. Say
+            goodbye to paperwork and long queues – just a few clicks, and you're
+            done.
+          </p>
+        </div>
+        <div class="card2">
+          <h3 class="card2__title">Seamless Cross-Device Experience</h3>
+          <p class="card2__content">
+            Our website looks and functions perfectly 
+            on every device, from smartphones to desktops, maximizing
+             user engagement and accessibility.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact" id="contact">
+      <div class="head">Contact Us</div>
+        <div class="links-d">
+          <a href="https://github.com/saturnextreme/Hostel-Management" target="_blank" class="link">Github</a>
+          <a href="http://www.iiitt.ac.in/" target="_blank" class="link">College Page</a>
+          <a href="" class="link">Members</a>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Admin Dashboard</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <ul class="navbar-items flexbox-col">
+        <li class="navbar-logo flexbox-left">
+          <a class="navbar-item-inner flexbox">
+            <ion-icon name="reorder-three-outline"></ion-icon>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a
+            href="{% url 'admin_dashboard' %}"
+            class="navbar-item-inner flexbox-left"
+          >
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <span class="link-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a
+            href="{% url 'student_detail' %}"
+            class="navbar-item-inner flexbox-left"
+          >
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="search-outline"></ion-icon>
+            </div>
+            <span class="link-text">Students</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a
+            href="{% url 'admin_notification' %}"
+            class="navbar-item-inner flexbox-left"
+          >
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="pie-chart-outline"></ion-icon>
+            </div>
+            <span class="link-text">Notifications</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a
+            href="{% url 'admin_complaint' %}"
+            class="navbar-item-inner flexbox-left"
+          >
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="chatbubbles-outline"></ion-icon>
+            </div>
+            <span class="link-text">Complaints</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a
+            href="{% url 'admin_leaveform' %}"
+            class="navbar-item-inner flexbox-left"
+          >
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="folder-open-outline"></ion-icon>
+            </div>
+            <span class="link-text">Leave Form Status</span>
+          </a>
+        </li>
+        {% comment %}
+        <li class="navbar-item flexbox-left">
+          <a class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="settings-outline"></ion-icon>
+            </div>
+            <span class="link-text">Settings</span>
+          </a>
+        </li>
+        {% endcomment %}
+      </ul>
+    </nav>
+    <div class="top-header">
+      <a href="{% url 'logout' %}">
+        <button class="logout">LogOut</button>
+      </a>
+      <img
+        src="{% static 'profile.png' %}"
+        alt="profile image"
+        class="profile"
+      />
+    </div>
+
+    <div class="main_container">
+      <div class="dash" style="display: none {{ display }}">
+        <h2 class="text-he">Welcome {{ fname }}</h2>
+        <div class="display-gr">
+          <div class="bo">
+            <h5 style="font-style: bold; color: rgb(245, 201, 165)">
+              Complaints
+            </h5>
+            {% for item in data %}
+            <div class="imp">{{ item.notice }}</div>
+            {% endfor %}
+          </div>
+          <div class="bo">
+            <h5 style="font-style: bold; color: rgb(245, 201, 165)">
+              Notifications
+            </h5>
+            {% for item in data2 %}
+            <div class="imp">{{ item.complaint }}</div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% block content %} {% endblock %}
+    </div>
+    <script src="" async defer></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

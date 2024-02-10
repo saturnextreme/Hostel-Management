@@ -1,0 +1,45 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'login.css' %}" />
+    <title>Signup</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        Student SignUp
+      </div>
+      <form method="post" action="{% url 'signup' %}" id="registerContainer">
+        {% csrf_token %}
+        <div class="form">
+          <label for="f_name" class="inp-l">First Name</label>
+          <input type="text" name="f_name" class="inp" />
+          <label for="l_name" class="inp-l">Last Name</label>
+          <input type="text" name="l_name" class="inp" />
+          <label for="email" class="inp-l">Email</label>
+          <input type="email" name="email" class="inp" />
+          <label for="password" class="inp-l">Password</label>
+          <input type="password" name="password" class="inp" />
+          <label for="c_password" class="inp-l">Confirm Password</label>
+          <input type="password" name="c_password" class="inp" />
+        </div>
+        {% if messages %} 
+        <ul class="messages">
+          {% for message in messages %}
+            <div class="notification {% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</div>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        <div class="btn">
+          <button class="button-9" role="button" >Register</button>
+        </div>
+      </form>
+      <a class='signuppage' href="{% url 'login' %}">Already have an Account.LogIn!</a>
+    </div>
+  </body>
+</html>

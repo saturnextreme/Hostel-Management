@@ -1,0 +1,62 @@
+{% extends "client/dashboard.html" %} {% block content %} {% load static %}
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="{% static 'profile.css' %}" />
+<link rel="stylesheet" href="{% static 'basic.css' %}" />
+
+<div class="m_header">Profile</div>
+<div class="content">
+  <div class="box">
+    <div class='base'>
+    <div class="name">{{ fname }} {{ lname }}</div>
+    <div class='full'>
+      <div class="imageprofile">
+        {% if request.session.imageurl %}
+        <img class='img' src="{{ request.session.imageurl }}" alt="{{ rollno }} Image" />
+        {% else %}
+        <img
+        src="{% static 'profile.png' %}"
+        alt="profile image"
+        class="img"
+      />
+        {% endif %}
+      </div>
+      <div class="profile_section">
+        <div class="row">
+          <div class="col"><span class="data">Email:</span> {{ email }}</div>
+          <div class="col"><span class="data">Roll No:</span> {{ rollno }}</div>
+          <div class="col"><span class="data">DOB:</span> {{ dob }}</div>
+          <div class="col">
+            <span class="data">Room:</span> {{ block_n }} {{ room }}
+          </div>
+          <div class="col"><span class="data">Address:</span> {{ address }}</div>
+          <div class="col"><span class="data">Year:</span> {{ year }}</div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <span class="data">Student Mobile:</span> {{ student_m }}
+          </div>
+          <div class="col">
+            <span class="data">Father Mobile:</span> {{ father_m }}
+          </div>
+          <div class="col">
+            <span class="data">Mother Mobile:</span> {{ mother_m }}
+          </div>
+          <div class="col"><span class="data">Department:</span> {{ dept }}</div>
+          <div class="col">
+            <span class="data">Semester:</span> {{ semester }}
+          </div>
+          <div class="col"><span class="data">Course:</span> {{ course }}</div>
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <a href="{% url 'edit_profile' %}">
+        <button class="s_btn">Edit Info</button>
+      </a>
+    </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

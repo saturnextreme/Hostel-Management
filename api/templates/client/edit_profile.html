@@ -1,0 +1,76 @@
+{% extends "client/dashboard.html" %} {% block content %}
+
+{% load static %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'basic.css' %}" />
+<link rel="stylesheet" href="{% static 'edit_profile.css' %}" />
+
+<div class="m_header">Edit Profile</div>
+<div class="content">
+  <div class="box">
+    <form class="f1 status" method="post" enctype="multipart/form-data" action="{% url 'edit_profile' %}">
+      {% csrf_token %}
+      <div class="e_form">
+        <label class='label'>Upload Profile Pic</label>
+        <input class="ip" type="file" name="image" accept="image/*" />
+      </div>
+      <div class="e_form">
+        <label class='label'>DOB</label>
+        <input class="ip" type="date" name='dob'  />
+      </div>
+      <div class="e_form">
+        <label class='label'>DEPARTMENT</label>
+        <input class="ip" type="text" name='dept'  />
+      </div>
+      <div class="e_form">
+        <label class='label'>SEMESTER</label>
+        <input class="ip" type="text" name='semester'  />
+      </div>
+      <div class="e_form">
+        <label class='label'>COURSE</label>
+        <input class="ip" type="text" name='course'  />
+      </div>
+      <div class="e_form">
+        <label class='label'>YEAR</label>
+        <input class="ip" type="text" name='year'  />
+      </div>
+      <div class="e_form">
+        <label class='label'>BLOCK</label>
+        <select class="ip" name='block' style='width: 60%;' >
+          <option value='B'>Boys</option>
+          <option value='G'>Girls</option>
+        </select>
+      </div>
+      <div class="e_form">
+        <label class='label'>ROOM NO</label>
+        <input class="ip" type="number"  name='room'  />
+      </div>
+      <div class="e_form">
+        <label class='label'>FATHER MOBILE</label>
+        <input class="ip" type="number"  name='father_m'  />
+      </div>
+      <div class="e_form">
+        <label class='label'>MOTHER MOBILE</label>
+        <input class="ip" type="number"  name='mother_m'  />
+      </div>
+      <div class="e_form">
+        <label class='label'>STUDENT MOBILE</label>
+        <input class="ip" type="number"  name='student_m'  />
+      </div>
+      <div class="e_form">
+        <label class='label'>ADDRESS</label>
+        <input class="ip" type="text"  name='address'  />
+      </div>
+      <div >
+        <a href="{% url 'profile' %}">
+          <button type='submit' class='s_btn'>Save</button>
+        </a>
+        <a class='btn' href="{% url 'profile' %}">
+          Cancel
+        </a>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
