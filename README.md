@@ -47,8 +47,6 @@ We welcome contributions to this project. Please fork the repository and submit 
 ## License
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-## Disclaimer
-Please note that this README.md template serves as a general structure for your README file. You may need to adjust it based on your specific project details and features. Additionally, this code snippet doesn't contain actual code implementation but rather provides an outline for your project's README.
 
 
 
