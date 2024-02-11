@@ -1,5 +1,7 @@
 # Hostel Management System using Django
 
+https://github.com/saturnextreme/Hostel-Management/assets/97591189/7b5f57da-6411-4b23-a3e4-de7602b36f8c
+
 Welcome to the Hostel Management System, a comprehensive web application built with Django to streamline hostel management processes. This system provides separate logins for students and administrators, empowering them to efficiently manage various aspects of hostel life.
 
 ## Features
@@ -49,5 +51,5 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 Please note that this README.md template serves as a general structure for your README file. You may need to adjust it based on your specific project details and features. Additionally, this code snippet doesn't contain actual code implementation but rather provides an outline for your project's README.
 
 
-https://github.com/saturnextreme/Hostel-Management/assets/97591189/7b5f57da-6411-4b23-a3e4-de7602b36f8c
+
 
